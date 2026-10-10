@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Học từ vựng tiếng Trung</title>
+<style>
+:root{--bg:#faf6ee;--card:#fff;--ink:#2b2320;--mut:#8a7f76;--red:#c0392b;--line:#e6dccb;--ok:#2e8b57;--bad:#c0392b}
+@media(prefers-color-scheme:dark){:root{--bg:#1c1816;--card:#2a2421;--ink:#f2ebe3;--mut:#a89d92;--line:#4a413b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,"Noto Sans SC","Microsoft YaHei",sans-serif}
+header{padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+h1{font-size:18px;margin:0;color:var(--red)}select,button,input{font:inherit;color:inherit}
+select,.btn{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer}
+.btn:hover{border-color:var(--red)}.btn.pri{background:var(--red);color:#fff;border-color:var(--red)}
+nav{display:flex;gap:6px;padding:10px 16px;overflow-x:auto}nav button{white-space:nowrap}nav .on{background:var(--red);color:#fff;border-color:var(--red)}
+main{max-width:760px;margin:0 auto;padding:12px 16px 60px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;user-select:none}
+.cells{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.cell{width:84px;height:84px;border:2px solid var(--red);font-size:56px;line-height:80px;font-family:"Kaiti SC","KaiTi","Noto Serif SC",serif;position:relative;cursor:pointer;
+background:linear-gradient(to bottom right,transparent calc(50% - .5px),#c0392b55 50%,transparent calc(50% + .5px)),linear-gradient(to top right,transparent calc(50% - .5px),#c0392b55 50%,transparent calc(50% + .5px)),linear-gradient(to right,transparent calc(50% - .5px),#c0392b55 50%,transparent calc(50% + .5px)),linear-gradient(to bottom,transparent calc(50% - .5px),#c0392b55 50%,transparent calc(50% + .5px))}
+.cell.sm{width:46px;height:46px;font-size:30px;line-height:42px;border-width:1.5px}
+.punct{align-self:center;font-size:24px;color:var(--mut)}
+.py{font-size:22px;color:var(--red)}.vi{font-size:20px;font-weight:600}.ex{font-size:15px;color:var(--mut);line-height:1.6}.ex b{color:var(--ink);font-size:18px;font-weight:500}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0;align-items:center}.mut{color:var(--mut);font-size:14px}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;background:var(--card);border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-size:17px}
+.opt:hover{border-color:var(--red)}.opt.ok{border-color:var(--ok);background:#2e8b5722}.opt.bad{border-color:var(--bad);background:#c0392b22}
+.q{text-align:center;padding:16px 0}.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:10px}.bar i{display:block;height:100%;background:var(--red)}
+.modal{position:fixed;inset:0;background:#000a;display:flex;align-items:center;justify-content:center;padding:14px;z-index:9}
+.modal>div{background:var(--card);border-radius:16px;padding:18px;max-width:700px;width:100%;max-height:92vh;overflow:auto;text-align:center}
+.wr{display:inline-block;margin:4px;border:1.5px solid var(--red);background:var(--card)}
+.sent{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0}
+.sent .z{font-size:22px;font-family:"Kaiti SC","KaiTi",serif}.hide .h{visibility:hidden}
+table{width:100%;border-collapse:collapse;font-size:14px}td{padding:6px;border-bottom:1px solid var(--line)}
+textarea{width:100%;min-height:90px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px}
+</style>
+</head>
+<body>
+<header><h1>📖 Học từ vựng tiếng Trung</h1><div><select id="lessonSel"></select></div></header>
+<nav id="tabs"></nav>
+<main id="app"></main>
+
+<!-- ===== DỮ LIỆU BÀI HỌC (tự động cập nhật khi bấm "Xuất file HTML mới" ở tab Dữ liệu) ===== -->
+<script id="lesson-data" type="application/json">[{"id": "b2", "name": "Bài B2", "words": [{"zh": "跟……一起 + V", "py": "gēn...yīqǐ + V", "vi": "Cùng với... làm gì", "ex": {"zh": "我跟朋友一起去看电影。", "py": "Wǒ gēn péngyou yīqǐ qù kàn diànyǐng.", "vi": ""}}, {"zh": "聊天", "py": "liáotiān", "vi": "Trò chuyện, tán gẫu", "ex": {"zh": "我喜欢跟朋友聊天。", "py": "Wǒ xǐhuān gēn péngyou liáotiān.", "vi": ""}}, {"zh": "缘分", "py": "yuánfèn", "vi": "Duyên phận", "ex": {"zh": "我们能认识是缘分。", "py": "Wǒmen néng rènshi shì yuánfèn.", "vi": ""}}, {"zh": "夫君", "py": "fūjūn", "vi": "Phu quân, chồng (cổ)", "ex": {"zh": "她的夫君是医生。", "py": "Tā de fūjūn shì yīshēng.", "vi": ""}}, {"zh": "丈夫", "py": "zhàngfu", "vi": "Chồng", "ex": {"zh": "她的丈夫是老师。", "py": "Tā de zhàngfu shì lǎoshī.", "vi": ""}}, {"zh": "非常", "py": "fēicháng", "vi": "Vô cùng, rất", "ex": {"zh": "这件衣服非常漂亮。", "py": "Zhè jiàn yīfu fēicháng piàoliang.", "vi": ""}}, {"zh": "幸福", "py": "xìngfú", "vi": "Hạnh phúc", "ex": {"zh": "我们一家人很幸福。", "py": "Wǒmen yījiā rén hěn xìngfú.", "vi": ""}}, {"zh": "生命", "py": "shēngmìng", "vi": "Sinh mệnh, tính mạng", "ex": {"zh": "生命很宝贵。", "py": "Shēngmìng hěn bǎoguì.", "vi": ""}}, {"zh": "给予", "py": "jǐyǔ", "vi": "Ban cho, trao tặng", "ex": {"zh": "他给予了我很多帮助。", "py": "Tā gěile wǒ hěnduō bāngzhù.", "vi": ""}}, {"zh": "一切", "py": "yīqiè", "vi": "Tất cả, mọi thứ", "ex": {"zh": "一切都很好。", "py": "Yīqiè dōu hěn hǎo.", "vi": ""}}, {"zh": "生病", "py": "shēngbìng", "vi": "Bị ốm, bị bệnh", "ex": {"zh": "他生病了，不能去上班。", "py": "Tā shēngbìng le, bùnéng qù shàngbān.", "vi": ""}}, {"zh": "秋天", "py": "qiūtiān", "vi": "Mùa thu", "ex": {"zh": "秋天很凉快。", "py": "Qiūtiān hěn liángkuai.", "vi": ""}}, {"zh": "累", "py": "lèi", "vi": "Mệt", "ex": {"zh": "我今天很累。", "py": "Wǒ jīntiān hěn lèi.", "vi": ""}}, {"zh": "石榴", "py": "shíliu", "vi": "Quả lựu", "ex": {"zh": "我喜欢吃石榴。", "py": "Wǒ xǐhuān chī shíliu.", "vi": ""}}, {"zh": "石榴汁", "py": "shíliuzhī", "vi": "Nước ép lựu", "ex": {"zh": "我喝石榴汁。", "py": "Wǒ hē shíliuzhī.", "vi": ""}}, {"zh": "摩托车", "py": "mótuō chē", "vi": "Xe máy", "ex": {"zh": "我骑摩托车上班。", "py": "Wǒ qí mótuō chē shàngbān.", "vi": ""}}, {"zh": "骑摩托车", "py": "qí mótuō chē", "vi": "Đi xe máy", "ex": {"zh": "我骑摩托车去学校。", "py": "Wǒ qí mótuō chē qù xuéxiào.", "vi": ""}}, {"zh": "青糯米饭", "py": "qīng nuòmǐfàn", "vi": "Xôi cốm (món ăn)", "ex": {"zh": "我喜欢吃青糯米饭。", "py": "Wǒ xǐhuān chī qīng nuòmǐfàn.", "vi": ""}}, {"zh": "河粉", "py": "héfěn", "vi": "Phở", "ex": {"zh": "我早上吃河粉。", "py": "Wǒ zǎoshang chī héfěn.", "vi": ""}}], "sents": [{"zh": "我跟朋友一起去看电影。", "py": "Wǒ gēn péngyou yīqǐ qù kàn diànyǐng.", "vi": "Tôi cùng bạn đi xem phim."}, {"zh": "我喜欢跟朋友聊天。", "py": "Wǒ xǐhuān gēn péngyou liáotiān.", "vi": "Tôi thích trò chuyện với bạn bè."}, {"zh": "我们能认识是缘分。", "py": "Wǒmen néng rènshi shì yuánfèn.", "vi": "Chúng ta có thể quen nhau là duyên phận."}, {"zh": "她的夫君是医生。", "py": "Tā de fūjūn shì yīshēng.", "vi": "Phu quân của cô ấy là bác sĩ."}, {"zh": "这件衣服非常漂亮。", "py": "Zhè jiàn yīfu fēicháng piàoliang.", "vi": "Bộ quần áo này vô cùng đẹp."}, {"zh": "我们一家人很幸福。", "py": "Wǒmen yījiā rén hěn xìngfú.", "vi": "Gia đình chúng tôi rất hạnh phúc."}, {"zh": "生命很宝贵。", "py": "Shēngmìng hěn bǎoguì.", "vi": "Sinh mệnh rất quý báu."}, {"zh": "他给予了我很多帮助。", "py": "Tā jǐyǔ le wǒ hěnduō bāngzhù.", "vi": "Anh ấy đã ban cho tôi rất nhiều sự giúp đỡ."}, {"zh": "一切都很好。", "py": "Yīqiè dōu hěn hǎo.", "vi": "Mọi thứ đều rất tốt."}, {"zh": "他生病了，不能去上班。", "py": "Tā shēngbìng le, bùnéng qù shàngbān.", "vi": "Anh ấy bị ốm, không thể đi làm."}, {"zh": "我喜欢吃石榴。", "py": "Wǒ xǐhuān chī shíliu.", "vi": "Tôi thích ăn lựu."}, {"zh": "我骑摩托车上班。", "py": "Wǒ qí mótuō chē shàngbān.", "vi": "Tôi đi xe máy đi làm."}, {"zh": "我喜欢吃青糯米饭。", "py": "Wǒ xǐhuān chī qīng nuòmǐfàn.", "vi": "Tôi thích ăn xôi cốm."}, {"zh": "我早上吃河粉。", "py": "Wǒ zǎoshang chī héfěn.", "vi": "Tôi ăn phở vào buổi sáng."}, {"zh": "秋天的时候，我喜欢喝石榴汁。", "py": "Qiūtiān de shíhou, wǒ xǐhuān hē shíliuzhī.", "vi": "Vào mùa thu, tôi thích uống nước ép lựu."}, {"zh": "今天我很累，不想做饭。", "py": "Jīntiān wǒ hěn lèi, bù xiǎng zuòfàn.", "vi": "Hôm nay tôi rất mệt, không muốn nấu ăn."}]}]</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5.0/dist/hanzi-writer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script>
+const PRISTINE='<!DOCTYPE html>\n'+document.documentElement.outerHTML; // bản gốc trước khi render, dùng để xuất file
+const HAN=/\p{Script=Han}/u, $=(s,e=document)=>e.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const built=JSON.parse($('#lesson-data').textContent);
+let user=[];try{user=JSON.parse(localStorage.getItem('hv_user')||'[]')}catch(e){}
+const saveUser=()=>{try{localStorage.setItem('hv_user',JSON.stringify(user))}catch(e){}};
+const all=()=>{const m=new Map();built.concat(user).forEach(l=>m.set(l.id,l));return [...m.values()]};
+let cur=localStorage.getItem?.('hv_cur')||'', tab='flash';
+const lesson=()=>all().find(l=>l.id===cur)||all()[0];
+const deckWords=()=>cur==='__all'?all().flatMap(l=>l.words):lesson().words;
+
+/* ---------- Audio ---------- */
+function speak(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.replace(/[…\.]{2,}|\+.*$|[A-Za-z]+/g,' '));u.lang='zh-CN';u.rate=.85;
+const v=speechSynthesis.getVoices().find(v=>/zh[-_]CN/i.test(v.lang));if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){}}
+speechSynthesis?.getVoices?.();
+
+/* ---------- Ô mễ: mỗi chữ Hán 1 ô ---------- */
+const cells=(zh,sm)=>'<div class="cells">'+[...zh].map(c=>HAN.test(c)?`<div class="cell ${sm?'sm':''}" data-c="${c}" data-w="${esc(zh)}">${c}</div>`:(/\s/.test(c)?'':`<span class="punct">${esc(c)}</span>`)).join('')+'</div>';
+
+/* ---------- Xem nét chữ (HanziWriter) ---------- */
+function strokeModal(word,startChar){
+  const chars=[...word].filter(c=>HAN.test(c)), m=document.createElement('div');m.className='modal';
+  m.innerHTML=`<div><h3 style="margin:0 0 6px">${esc(word)}</h3><div id="ws"></div><div class="row"><button class="btn pri" id="an">▶ Xem nét</button><button class="btn" id="qz">✍️ Tập viết</button><button class="btn" id="cl">Đóng</button></div><div class="mut" id="msg">Bấm "Xem nét" hoặc "Tập viết" rồi vẽ trực tiếp lên ô.</div></div>`;
+  document.body.appendChild(m);const ws=[];
+  chars.forEach(c=>{const d=document.createElement('div');d.className='wr';$('#ws',m).appendChild(d);
+    ws.push(HanziWriter.create(d,c,{width:150,height:150,padding:8,strokeColor:'#c0392b',outlineColor:'#ddd',radicalColor:'#2e8b57',strokeAnimationSpeed:1.2,delayBetweenStrokes:200,onLoadCharDataError:()=>{d.innerHTML=`<div style="width:150px;height:150px;line-height:150px;font-size:70px">${c}</div>`}}))});
+  const run=async fn=>{for(const w of ws){await new Promise(r=>fn(w,r))}};
+  $('#an',m).onclick=()=>{ws.forEach(w=>{w.cancelQuiz?.();w.hideCharacter()});run((w,r)=>w.animateCharacter({onComplete:r}))};
+  $('#qz',m).onclick=()=>{ws.forEach(w=>w.hideCharacter());$('#msg',m).textContent='Hãy viết từng nét theo thứ tự…';
+    run((w,r)=>w.quiz({onComplete:r}))};
+  $('#cl',m).onclick=()=>m.remove();m.onclick=e=>{if(e.target===m)m.remove()};
+  if(startChar)ws[chars.indexOf(startChar)]?.animateCharacter();
+}
+document.addEventListener('click',e=>{const c=e.target.closest('.cell');if(c){e.stopPropagation();speak(c.dataset.w);strokeModal(c.dataset.w,c.dataset.c)}},true);
+
+/* ---------- Flashcard ---------- */
+let F={i:0,flip:false,deck:[]};
+function tabFlash(el){
+  if(!F.deck.length||F.src!==cur){F.deck=deckWords();F.i=0;F.flip=false;F.src=cur}
+  const w=F.deck[F.i];if(!w){el.innerHTML='Chưa có từ.';return}
+  el.innerHTML=`<div class="bar"><i style="width:${(F.i+1)/F.deck.length*100}%"></i></div><div class="mut" style="text-align:center">${F.i+1} / ${F.deck.length}</div>
+  <div class="card" id="fc">${F.flip?`<div class="py">${esc(w.py)}</div><div class="vi">${esc(w.vi)}</div>${w.ex?`<div class="ex"><b>${esc(w.ex.zh)}</b><br>${esc(w.ex.py)}</div>`:''}${cells(w.zh,1)}`:cells(w.zh)+'<div class="mut">Bấm thẻ để lật · bấm từng ô để xem nét chữ</div>'}</div>
+  <div class="row"><button class="btn" id="pv">◀</button><button class="btn pri" id="au">🔊 Nghe</button><button class="btn" id="st">✍️ Nét chữ</button><button class="btn" id="sh">🔀 Trộn</button><button class="btn" id="nx">▶</button></div>`;
+  const go=d=>{F.i=(F.i+d+F.deck.length)%F.deck.length;F.flip=false;render()};
+  $('#fc',el).onclick=()=>{F.flip=!F.flip;if(F.flip)speak(w.zh);render()};
+  $('#pv',el).onclick=()=>go(-1);$('#nx',el).onclick=()=>go(1);$('#au',el).onclick=()=>speak(w.zh);
+  $('#st',el).onclick=()=>strokeModal(w.zh);$('#sh',el).onclick=()=>{F.deck=shuffle(F.deck);F.i=0;F.flip=false;render()};
+  F.go=go;
+}
+document.addEventListener('keydown',e=>{if(tab!=='flash'||e.target.matches('input,textarea,select'))return;
+  if(e.key==='ArrowRight')F.go?.(1);if(e.key==='ArrowLeft')F.go?.(-1);if(e.key===' '){e.preventDefault();$('#fc')?.click()}});
+
+/* ---------- Trắc nghiệm ---------- */
+let Q=null;
+function tabQuiz(el){
+  if(!Q){el.innerHTML=`<div class="q"><h3>Chọn dạng câu hỏi</h3><div class="row"><button class="btn pri" data-m="zv">Chữ Hán → Nghĩa</button><button class="btn pri" data-m="vz">Nghĩa → Chữ Hán</button><button class="btn pri" data-m="pz">Nghe → Chữ Hán</button><button class="btn pri" data-m="py">Chữ Hán → Pinyin</button></div></div>`;
+    el.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{const ws=deckWords(),pool=ws.length>=4?ws:all().flatMap(l=>l.words);
+      Q={m:b.dataset.m,qs:shuffle(ws),pool,i:0,score:0,done:false};render()});return}
+  if(Q.i>=Q.qs.length){el.innerHTML=`<div class="q"><h2>🎉 ${Q.score} / ${Q.qs.length}</h2><button class="btn pri" id="rs">Làm lại</button></div>`;$('#rs',el).onclick=()=>{Q=null;render()};return}
+  const w=Q.qs[Q.i],key={zv:'vi',vz:'zh',pz:'zh',py:'py'}[Q.m];
+  let ops=shuffle(Q.pool.filter(x=>x[key]!==w[key])).filter((x,i,a)=>a.findIndex(y=>y[key]===x[key])===i).slice(0,3).concat(w);ops=shuffle(ops);
+  const q={zv:cells(w.zh,1),py:cells(w.zh,1),vz:`<div class="vi">${esc(w.vi)}</div><div class="py">${esc(w.py)}</div>`,pz:'<button class="btn pri" id="pl">🔊 Nghe lại</button>'}[Q.m];
+  el.innerHTML=`<div class="bar"><i style="width:${Q.i/Q.qs.length*100}%"></i></div><div class="mut" style="text-align:center">Câu ${Q.i+1}/${Q.qs.length} · Điểm ${Q.score}</div><div class="q">${q}</div><div id="os">${ops.map((o,i)=>`<button class="opt" data-i="${i}">${esc(o[key])}</button>`).join('')}</div><div id="fb"></div>`;
+  if(Q.m==='pz'){$('#pl',el).onclick=()=>speak(w.zh);speak(w.zh)}
+  el.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(Q.done)return;Q.done=true;const ok=ops[b.dataset.i]===w;if(ok)Q.score++;
+    el.querySelectorAll('.opt').forEach((x,i)=>{if(ops[i]===w)x.classList.add('ok')});if(!ok)b.classList.add('bad');speak(w.zh);
+    $('#fb',el).innerHTML=`<div class="row"><b>${esc(w.zh)}</b> ${esc(w.py)} — ${esc(w.vi)}</div><div class="row"><button class="btn pri" id="nq">Tiếp ▶</button></div>`;
+    $('#nq',el).onclick=()=>{Q.i++;Q.done=false;render()}});
+}
+
+/* ---------- Câu mẫu ---------- */
+function tabSent(el){
+  const ss=lesson().sents||[];
+  el.innerHTML=`<div class="row"><label><input type="checkbox" id="hp"> Ẩn pinyin & nghĩa (tự kiểm tra)</label></div><div id="sl" ></div>`;
+  const L=$('#sl',el);L.innerHTML=ss.map((s,i)=>`<div class="sent"><div class="z">${esc(s.zh)} <button class="btn" data-s="${i}">🔊</button></div><div class="h py" style="font-size:15px">${esc(s.py)}</div><div class="h">${esc(s.vi)}</div></div>`).join('')||'Chưa có câu mẫu.';
+  L.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>speak(ss[b.dataset.s].zh));
+  $('#hp',el).onchange=e=>L.classList.toggle('hide',e.target.checked);
+  L.querySelectorAll('.sent').forEach(s=>s.onclick=e=>{if(e.target.tagName!=='BUTTON')s.querySelectorAll('.h').forEach(h=>h.style.visibility=h.style.visibility==='visible'?'':'visible')});
+}
+
+/* ---------- Dữ liệu: tải file / thêm bài / xuất HTML ---------- */
+function parseRows(rows,name){
+  const words=[],sents=[];
+  rows.forEach(r=>{if(!r||r[0]==null||isNaN(+r[0]))return;
+    if(r[4]){const t=String(r[4]),m=t.search(HAN);words.push({zh:String(r[1]).trim(),py:r[2]||'',vi:r[3]||'',ex:{zh:m<0?t:t.slice(m),py:m<0?'':t.slice(0,m).trim(),vi:''}})}
+    else if(r[3]&&HAN.test(r[1]))sents.push({zh:String(r[1]),py:r[2]||'',vi:r[3]})});
+  return {id:'u'+Date.now(),name,words,sents};
+}
+function tabData(el){
+  el.innerHTML=`<h3>Thêm bài mới</h3><p class="mut">Tải file Excel (.xlsx) cùng cấu trúc: STT | Chữ Hán | Pinyin | Nghĩa | Ví dụ (pinyin + chữ Hán); bảng thứ 2: STT | Mẫu câu | Pinyin | Nghĩa. Hoặc file .json.</p>
+  <div class="row"><input id="nm" placeholder="Tên bài" style="padding:7px;border:1px solid var(--line);border-radius:8px;background:var(--card)"><input type="file" id="fi" accept=".xlsx,.xls,.csv,.json"></div><div id="pv" class="mut"></div>
+  <h3>Các bài hiện có</h3><table>${all().map(l=>`<tr><td>${esc(l.name)}</td><td>${l.words.length} từ · ${(l.sents||[]).length} câu</td><td>${user.includes(l)||user.some(u=>u.id===l.id)?`<button class="btn" data-d="${l.id}">Xóa</button>`:'<span class="mut">có sẵn</span>'}</td></tr>`).join('')}</table>
+  <h3>Lưu vĩnh viễn vào file HTML</h3><p class="mut">Bài thêm mới được lưu trong trình duyệt này. Bấm nút dưới để tải về file HTML mới đã nhúng toàn bộ bài học (dùng thay file cũ, hoặc chép sang máy khác).</p><button class="btn pri" id="ex">⬇ Xuất file HTML mới</button>`;
+  $('#fi',el).onchange=async e=>{const f=e.target.files[0];if(!f)return;const name=$('#nm',el).value||f.name.replace(/\.\w+$/,'');let L;
+    try{if(/\.json$/i.test(f.name)){const j=JSON.parse(await f.text());L=Array.isArray(j)?j:[j]}
+    else{const wb=XLSX.read(await f.arrayBuffer());L=[parseRows(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{header:1}),name)]}
+    L.forEach(l=>{l.id=l.id||'u'+Date.now();l.name=l.name||name;l.sents=l.sents||[];user=user.filter(u=>u.id!==l.id);user.push(l)});saveUser();cur=L[0].id;localStorage.setItem('hv_cur',cur);F.deck=[];render()}
+    catch(err){$('#pv',el).textContent='Lỗi đọc file: '+err.message}};
+  el.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{user=user.filter(u=>u.id!==b.dataset.d);saveUser();cur='';F.deck=[];render()});
+  $('#ex',el).onclick=()=>{const all2=JSON.stringify(all());const html=PRISTINE.replace(/(<script id="lesson-data"[^>]*>)[\s\S]*?(<\/script>)/,(m,a,b)=>a+all2.replace(/<\//g,'<\\/')+b);
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));a.download='hoc-tu-vung.html';a.click()};
+}
+
+/* ---------- Đăng ký bài tập (mở rộng) ---------- */
+const TABS=[{id:'flash',name:'🃏 Flashcard',render:tabFlash},{id:'quiz',name:'✅ Trắc nghiệm',render:tabQuiz},{id:'sent',name:'💬 Câu mẫu',render:tabSent},{id:'data',name:'⚙️ Dữ liệu',render:tabData}];
+/* Thêm bài tập mới: registerExercise({id,name,render(el,ctx)}) — viết trong khối <script id="plugins"> bên dưới */
+window.registerExercise=ex=>{if(!TABS.find(t=>t.id===ex.id))TABS.splice(TABS.length-1,0,ex)};
+window.HV={speak,cells,strokeModal,shuffle,esc,lesson,deckWords,all};
+
+function render(){
+  const sel=$('#lessonSel');if(!all().find(l=>l.id===cur)&&cur!=='__all')cur=all()[0].id;
+  sel.innerHTML=all().map(l=>`<option value="${l.id}">${esc(l.name)}</option>`).join('')+(all().length>1?'<option value="__all">Tất cả bài</option>':'');sel.value=cur;
+  $('#tabs').innerHTML=TABS.map(t=>`<button class="btn ${t.id===tab?'on':''}" data-t="${t.id}">${t.name}</button>`).join('');
+  $('#tabs').querySelectorAll('button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;Q=null;render()});
+  const el=$('#app');el.innerHTML='';(TABS.find(t=>t.id===tab)||TABS[0]).render(el,{lesson:lesson(),words:deckWords()});
+}
+$('#lessonSel').onchange=e=>{cur=e.target.value;try{localStorage.setItem('hv_cur',cur)}catch(x){}F.deck=[];Q=null;render()};
+</script>
+
+<!-- ===== KHỐI BÀI TẬP / TÍNH NĂNG MỚI: dán thêm code registerExercise(...) vào đây ===== -->
+<script id="plugins">
+/* Ví dụ:
+registerExercise({id:'listen',name:'🎧 Nghe viết',render(el,ctx){ el.innerHTML='...'; }});
+*/
+</script>
+<script>render();</script>
+</body>
+</html>
